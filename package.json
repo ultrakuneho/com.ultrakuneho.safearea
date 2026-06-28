@@ -1,0 +1,35 @@
+{
+  "name": "com.ultrakuneho.safearea",
+  "version": "1.0.0",
+  "displayName": "SafeArea",
+  "description": "Provides SafeAreaFitter, a UIBehaviour that drives a RectTransform to match Screen.safeArea using Unity's UI layout system.",
+  "unity": "2021.2",
+  "license": "MIT",
+  "dependencies": {
+    "com.unity.ugui": "1.0.0"
+  },
+  "keywords": [
+    "safearea",
+    "ui",
+    "ugui",
+    "mobile",
+    "layout",
+    "notch"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ultrakuneho/com.ultrakuneho.safearea.git"
+  },
+  "homepage": "https://github.com/ultrakuneho/com.ultrakuneho.safearea",
+  "author": {
+    "name": "Stephen de Sagun",
+    "url": "https://github.com/ultrakuneho"
+  },
+  "samples": [
+    {
+      "displayName": "Demo",
+      "description": "Demonstrates SafeAreaFitter and visualizes the current safe area.",
+      "path": "Samples~"
+    }
+  ]
+}
