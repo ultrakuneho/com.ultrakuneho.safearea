@@ -55,11 +55,15 @@ namespace UltraKuneho.SafeArea {
       m_Tracker.Clear();
     }
 
+    protected override void OnRectTransformDimensionsChange() {
+      if (!isActiveAndEnabled) return;
+      LayoutRebuilder.MarkLayoutForRebuild(m_RectTransform);
+    }
+
 #if UNITY_EDITOR
     private System.Collections.IEnumerator DelayedEditorLayout() {
       yield return null;
-
-      SetLayoutHorizontal();
+      OnRectTransformDimensionsChange();
     }
 
     protected override void Reset() {
