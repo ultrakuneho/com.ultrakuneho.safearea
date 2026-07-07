@@ -1,6 +1,6 @@
 {
   "name": "com.ultrakuneho.safearea",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "SafeArea",
   "description": "Provides SafeAreaFitter, a UIBehaviour that drives a RectTransform to match Screen.safeArea using Unity's UI layout system.",
   "unity": "2021.2",
