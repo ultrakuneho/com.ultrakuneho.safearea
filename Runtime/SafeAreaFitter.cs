@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -42,13 +43,7 @@ namespace UltraKuneho.SafeArea {
     protected override void OnEnable() {
       EnsureReferences();
       m_Tracker.Add(this, m_RectTransform, k_DrivenProperties);
-
-#if UNITY_EDITOR
-      // In Edit mode, opening a scene does not trigger an automatic
-      // layout rebuild, and Screen values are not yet valid during
-      // OnEnable(). One frame delay fixes both.
-      StartCoroutine(DelayedEditorLayout());
-#endif
+      StartCoroutine(DelayedLayout());
     }
 
     protected override void OnDisable() {
@@ -60,12 +55,12 @@ namespace UltraKuneho.SafeArea {
       LayoutRebuilder.MarkLayoutForRebuild(m_RectTransform);
     }
 
-#if UNITY_EDITOR
-    private System.Collections.IEnumerator DelayedEditorLayout() {
+    private IEnumerator DelayedLayout() {
       yield return null;
       OnRectTransformDimensionsChange();
     }
 
+#if UNITY_EDITOR
     protected override void Reset() {
       EnsureReferences();
     }
